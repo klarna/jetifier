@@ -83,3 +83,23 @@ cache:
     - $HOME/.npm
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
+
+#
+# https://blog.travis-ci.com/2018-04-11-how_to_publish_node_js_packages_with_travis_ci_and_packagecloud/
+#
+deploy:
+  provider: script
+  script: "cp .publishing/.npmrc.template $HOME/.npmrc && npm publish"
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: klarna/jetifier
+
+notifications:
+  email:
+    recipients:
+      - $AUTHOR_NOTIFICATION_EMAIL
+    on_success: change
+    on_failure: always
+    on_error: never
+    on_cancel: never

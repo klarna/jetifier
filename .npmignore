@@ -1,0 +1,4 @@
+*.yml
+.publishing/
+.vscode/
+.idea/

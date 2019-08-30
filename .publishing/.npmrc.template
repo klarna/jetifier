@@ -1,0 +1,3 @@
+always-auth=true
+email = ${AUTHOR_NOTIFICATION_EMAIL}
+registry=//registry.npmjs.org/:_authToken=${API_TOKEN}
