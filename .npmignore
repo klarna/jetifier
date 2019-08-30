@@ -2,3 +2,4 @@
 .publishing/
 .vscode/
 .idea/
+yarn.lock
